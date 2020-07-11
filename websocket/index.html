@@ -1,0 +1,37 @@
+<!--
+ * @Description:  
+ * @Author: jinhua
+ * @Date: 2020-07-11 19:03:24
+ * @FilePath: \github\pick-up\websocket\index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Ws</h1>
+    <form>
+        <div>
+            <label for="">信息</label>
+            <input type="text" id="msg">
+        </div>
+        <div onclick="sendMessage()" id="btn">发送</div>
+    </form>
+    <script>
+        var ws = new WebSocket('ws://localhost:8889');
+        ws.onopen = function(e) {
+            console.log('连接ws', e);
+        }
+
+        function sendMessage() {
+            ws.send(document.getElementById('msg').value);
+        }
+    </script>
+</body>
+
+</html>

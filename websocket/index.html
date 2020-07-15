@@ -27,6 +27,9 @@
         ws.onopen = function(e) {
             console.log('连接ws', e);
         }
+        ws.onmessage = function(e) {
+            alert('回消息了', e);
+        }
 
         function sendMessage() {
             ws.send(document.getElementById('msg').value);

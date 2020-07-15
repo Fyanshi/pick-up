@@ -14,5 +14,8 @@ wsS.on('connection', function(ws) {
     console.log('连接', ws);
     ws.on('message', function(message) {
         console.log(message);
+        if (message == '1') {
+            ws.send('❥(^_-)', function() {});
+        }
     });
 });
